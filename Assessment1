@@ -1,0 +1,19 @@
+1)const sleep = ms => new Promise(r=>setTimeout(r,ms));
+
+async function getUsers(userIds){
+    const results = [];
+    
+    for(const id of userIds){
+        const results = [];
+        
+        for(const id of userIds){
+            const res = await fetch("/users/{id}");
+            results.push(await res.json());
+            
+            await sleep(1000);
+        }
+        return results;
+    }
+}
+
+
